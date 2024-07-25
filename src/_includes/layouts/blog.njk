@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <button id="nav-button" onclick="openNav()">
+    <svg id="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+  </button>
+  <script>
+    function openNav() {
+      var navElement = document.getElementById("navbar");
+      if (navElement.classList == "show") {
+        navElement.classList.remove("show");
+        navElement.classList.add("hide");
+      } else {
+        navElement.classList.add("show");
+        navElement.classList.remove("hide");
+      }
+    }
+  </script>
+  <nav id="navbar" class="show">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about/">About</a>
+      </li>
+        {% for post in collections.blog %}
+      <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <main>
+    <div class="main-content">
+        <div class="blog-card">
+          {{ content | safe }}
+           <p>Published on {{ page.date.toISOString().split('T')[0] }}</p>
+        </div>
+    </div>
+  </main>
+  <footer>
+    Built using <a href="https://www.11ty.dev/">11ty</a>, 
+    hosted on <a href="https://pages.github.com/">github pages</a>, 
+    created by <a href="https://nz.linkedin.com/in/james-laccohee-fearnley">James Fearnley</a>
+  </footer>
+</body>
+</html>
