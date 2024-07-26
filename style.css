@@ -1,0 +1,114 @@
+body {
+  font-family: Helvetica, sans-serif;
+  color: forestgreen;
+  background-color: black;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 20px 1fr 20px;
+}
+
+/* nav {
+  min-width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end:3;
+} */
+
+/* Nav show and hide */
+.show {
+  min-width: 90px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end:3;
+}
+/* Keep it in the DOM for accessibility */
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+button {
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+}
+
+#nav-button {
+  background-color: black;
+  width: 100px;
+  height: 50px;
+}
+
+svg {
+  fill: darkmagenta;
+  width: 25px;
+  height: 25px;
+}
+
+nav a {
+  max-width: fit-content;
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  color: forestgreen;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: none;
+  background-color: forestgreen;
+  color: darkmagenta;
+  cursor: pointer;  
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+main {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end:3;
+}
+
+div .blog-card {
+  border: solid darkmagenta 2px;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgb(67, 0, 67);
+}
+
+.blog-card h1 {
+  text-decoration: underline;
+  text-decoration-color: darkmagenta;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+p {
+  margin-left: 10px;
+}
+
+footer {
+  margin-top: 10px;
+  height: 20px;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end:4; 
+}
+
+footer a {
+  color: darkmagenta;
+}
+
+img {
+  max-height: 500px;
+}
